@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Favorite Movies</title>
+
+  <!-- jQuery Mobile styles and scripts -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link rel="stylesheet" href="finalTheme/themes/final.min.css" />
+<link rel="stylesheet" href="finalTheme/themes/jquery.mobile.icons.min.css" />
+</head>
+<body>
+
+<!-- HOME PAGE -->
+<div data-role="page" id="home" data-theme="a">
+  <div data-role="panel" id="appPanel" data-display="reveal">
+    <h3>App Menu</h3>
+    <ul data-role="listview">
+      <li><a href="index.html" data-ajax="false">Home</a></li>
+      <li><a href="movies.html" data-ajax="false">Movies</a></li>
+      <li><a href="suggest.html" data-ajax="false">Suggest a Movie</a></li>
+    </ul>
+  </div>
+
+    <div data-role="header" data-add-back-btn="true">
+        <h1>Home</h1>
+        <a href="#appPanel" class="ui-btn ui-btn-left ui-icon-bars ui-btn-icon-notext">Menu</a>
+    </div>
+
+  <div data-role="main" class="ui-content">
+    <div class="logo"><img src="images/pfp.jpeg" width="100" height="100" alt=""/></div>
+    <p>Hi! I'm Tyler. I love movies of all kinds — here's what I enjoy most:</p>
+    <ul data-role="listview">
+      <li><a href="#horror">Horror</a></li>
+      <li><a href="#comedy">Comedy</a></li>
+      <li><a href="#action">Action</a></li>
+      <li><a href="#mystery">Mystery</a></li>
+    </ul>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h4>&copy; 2025 Tyler Zacharias</h4>
+  </div>
+</div>
+
+<!-- HORROR PAGE -->
+<div data-role="page" id="horror" data-theme="a">
+
+  <div data-role="header" data-add-back-btn="true">
+    <h1>Horror Movies</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <ul>
+      <li>Scream</li>
+      <li>Freaky</li>
+      <li>The Shining</li>
+    </ul>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h4>&copy; 2025 Tyler Zacharias</h4>
+  </div>
+</div>
+
+<!-- COMEDY PAGE -->
+<div data-role="page" id="comedy" data-theme="a">
+
+  <div data-role="header" data-add-back-btn="true">
+    <h1>Comedy Movies</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <ul>
+      <li>Tropic Thunder</li>
+      <li>Deadpool and Wolverine</li>
+      <li>Barbie</li>
+    </ul>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h4>&copy; 2025 Tyler Zacharias</h4>
+  </div>
+</div>
+
+<!-- ACTION PAGE -->
+<div data-role="page" id="action" data-theme="a">
+
+  <div data-role="header" data-add-back-btn="true">
+    <h1>Action Movies</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <ul>
+      <li>John Wick</li>
+      <li>Fall Guy</li>
+      <li>Fantastic Four: First Steps</li>
+    </ul>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h4>&copy; 2025 Tyler Zacharias</h4>
+  </div>
+</div>
+
+<!-- MYSTERY PAGE -->
+<div data-role="page" id="mystery" data-theme="a">
+
+  <div data-role="header" data-add-back-btn="true">
+    <h1>Mystery Movies</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <ul>
+      <li>Knives Out</li>
+      <li>Glass Onion</li>
+      <li>The Prestige</li>
+    </ul>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h4>&copy; 2025 Tyler Zacharias</h4>
+  </div>
+</div>
+
+</body>
+</html>

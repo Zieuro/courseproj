@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Suggest Movies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link rel="stylesheet" href="finalTheme/themes/final.min.css" />
+<link rel="stylesheet" href="finalTheme/themes/jquery.mobile.icons.min.css" />
+  <script src="suggest.js"></script>
+</head>
+<body>
+
+    <div data-role="page" id="suggest" data-theme="c">
+      <div data-role="panel" id="appPanel" data-display="reveal">
+        <h3>App Menu</h3>
+        <ul data-role="listview">
+          <li><a href="index.html" data-ajax="false">Home</a></li>
+          <li><a href="movies.html" data-ajax="false">Movies</a></li>
+          <li><a href="suggest.html" data-ajax="false">Suggest a Movie</a></li>
+        </ul>
+      </div>
+
+        <div data-role="header" data-add-back-btn="true">
+            <h1>Suggest a Movie</h1>
+            <a href="#appPanel" class="ui-btn ui-btn-left ui-icon-bars ui-btn-icon-notext">Menu</a>
+        </div>
+      
+        <div data-role="main" class="ui-content">
+          <form id="suggestForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name">
+      
+            <label for="genre">Favorite Genre:</label>
+            <select id="genre" name="genre">
+                <option value="horror">Horror</option>
+                <option value="comedy">Comedy</option>
+                <option value="action">Action</option>
+                <option value="mystery">Mystery</option>
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="romance">Romance</option>
+                <option value="drama">Drama</option>
+                <option value="documentary">Documentary</option>
+                <option value="animation">Animation</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="thriller">Thriller</option>
+                <option value="adventure">Adventure</option>
+            </select>
+      
+            <label for="movie">Movie Title:</label>
+            <input type="text" id="movie" name="movie">
+      
+            <label for="watched">Have you watched it?</label>
+            <input type="checkbox" id="watched" name="watched"> Yes
+      
+            <label for="notes">Why do you recommend it?</label>
+            <textarea id="notes" name="notes"></textarea>
+      
+            <input type="submit" value="Save Suggestion">
+          </form>
+          <p id="confirmationMsg"></p>
+        </div>
+      
+        <div data-role="footer" data-position="fixed">
+          <h4>&copy; 2025 Tyler Zacharias</h4>
+        </div>
+      </div>
+      
+
+</body>
+</html>

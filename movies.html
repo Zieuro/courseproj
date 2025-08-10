@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Top 3 Movies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link rel="stylesheet" href="finalTheme/themes/courproj.min.css" />
+<link rel="stylesheet" href="finalTheme/themes/jquery.mobile.icons.min.css" />
+</head>
+<body>
+
+<div data-role="page" id="movies" data-theme="b">
+  <div data-role="panel" id="appPanel" data-display="reveal">
+    <h3>App Menu</h3>
+    <ul data-role="listview">
+      <li><a href="index.html" data-ajax="false">Home</a></li>
+      <li><a href="movies.html" data-ajax="false">Movies</a></li>
+      <li><a href="suggest.html" data-ajax="false">Suggest a Movie</a></li>
+    </ul>
+  </div>
+
+  <div data-role="header" data-add-back-btn="true">
+        <h1>My Top 3 Movies</h1>
+        <a href="#appPanel" class="ui-btn ui-btn-left ui-icon-bars ui-btn-icon-notext">Menu</a>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    
+    <div class="ui-grid-b">
+      <div class="ui_block-a">
+        <div class="ui-bar ui-bar-a" style="height: 60px">John Wick</div>
+      </div>
+
+      <div class="ui_block-b">
+        <div class="ui-bar ui-bar-a" style="height: 60px">Top Gun: Maverick</div>
+      </div>
+
+      <div class="ui_block-c">
+        <div class="ui-bar ui-bar-a" style="height: 60px">Jurassic Park</div>
+      </div>
+    </div>
+
+    <h2>Your Saved Favorite Movies</h2>
+    <ul id="favlist" data-role="listview" data-filter="true" data-inset="true">
+      <!-- Favorite movies will be dynamically added here -->
+    </ul>
+    <p>Want to add your own? <a href="suggest.html" data-ajax="false">Suggest a Movie</a></p>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h4>&copy; 2025 Tyler Zacharias</h4>
+  </div>
+
+</div>
+
+<script>
+  // When this page is about to be shown, (re)render favorites
+  $(document).on("pagebeforeshow", "#movies", function () {
+    const list = $("#favList");
+    list.empty();
+
+    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+    if (favorites.length === 0) {
+      $("#noFavs").show();
+      list.listview("refresh");
+      return;
+    }
+    $("#noFavs").hide();
+
+    favorites.forEach(fav => {
+      const watched = fav.watched ? "✓ watched" : "not watched";
+      const li = `
+        <li>
+          <a href="#">
+            <h2>${fav.movie}</h2>
+            <p>${fav.genre}</p>
+            <p>${watched}</p>
+            <p>by ${fav.name}</p>
+          </a>
+        </li>`;
+      list.append(li);
+    });
+
+    // tell jQuery Mobile to enhance the new list items
+    try { list.listview("refresh"); } catch (e) {}
+  });
+</script>
+
+</body>
+</html>
